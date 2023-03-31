@@ -45,6 +45,7 @@ async function fetchToken() {
 }
 
 exports.handler = async (event) => {
+  console.log(event)
   let response = await fetchToken();
   return response;
 };
