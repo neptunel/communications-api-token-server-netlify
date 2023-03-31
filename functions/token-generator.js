@@ -45,7 +45,9 @@ async function fetchToken() {
 }
 
 exports.handler = async (event) => {
-  console.log(event.queryStringParameters.expires)
+  //console.log(event.queryStringParameters.expires)
+  let expiry = event.queryStringParameters.expires
+  console.log(expiry)
   let response = await fetchToken();
   return response;
 };
