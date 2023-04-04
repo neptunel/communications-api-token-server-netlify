@@ -51,8 +51,8 @@ exports.handler = async (event) => {
   console.log(event);
   console.log(process.env);
   let env = process.env;
-  process.env["CONSUMER_SECRET"].remove();
-  process.env["CONSUMER_KEY"].remove()
+  delete process.env["CONSUMER_SECRET"];
+  delete process.env["CONSUMER_KEY"];
   return { statusCode: 405, body: JSON.stringify({event, env},null,4) };
   let isValid = false;
 
