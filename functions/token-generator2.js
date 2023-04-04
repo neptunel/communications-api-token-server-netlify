@@ -49,7 +49,11 @@ async function fetchToken() {
 
 exports.handler = async (event) => {
   console.log(event);
-  return { statusCode: 405, body: JSON.stringify(event,null,4) };
+  console.log(process.env);
+  let env = process.env;
+  env.remove("CONSUMER_SECRET");
+  env.remove("CONSUMER_KEY");
+  return { statusCode: 405, body: JSON.stringify({event, env},null,4) };
   let isValid = false;
 
   // Only allow POST
