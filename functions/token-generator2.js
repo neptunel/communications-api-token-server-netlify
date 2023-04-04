@@ -47,6 +47,8 @@ async function fetchToken() {
 }
 
 exports.handler = async (event) => {
+console.log(event)
+return { statusCode: 405, body: event};
   let isValid = false;
 
   // Only allow POST
