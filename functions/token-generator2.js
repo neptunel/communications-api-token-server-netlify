@@ -65,7 +65,7 @@ exports.handler = async (event) => {
 
   // restrict to allow only from same domain host url
   if (APP_IDENTIFIER.toLowerCase() === "web") {
-    if (event.headers.origin !== SITE_URL) {
+    if ("https://" + event.headers.host !== SITE_URL) {
       isValid = false;
     } else {
       isValid = true;
